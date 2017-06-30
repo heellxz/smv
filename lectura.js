@@ -49,7 +49,7 @@ steem.api.getAccountHistory(nickname, -1, 100, function(err, result) {
 
 		data.push({'a' : ask, 'b' : bids, "y" : milli});
 
-		if(data.length > 100){
+		if(data.length > 50){
 			data.shift();
 		};
 
