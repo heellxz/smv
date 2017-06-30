@@ -3,9 +3,41 @@ var data = [];
 
 function refresh () {
 	var nickname = $('#nickname').val();
+
+steem.api.getAccountCount(function(err, result) {
+	console.log(err, result);
+});
+
+steem.api.getAccountHistory(nickname, -1, 100, function(err, result) {
+	var historial = '';
+	var counter = 0;
+	for (i = result.length - 1; i > 0; i--) { 
+		var operation = result[i][1]['op'];
+		if(operation[0] == 'fill_order' && counter < 5){
+			if(operation[1]['current_pays'].search('SBD') > 0){
+
+				current_pays = operation[1]['current_pays'].replace(' SBD','');
+				open_pays = operation[1]['open_pays'].replace(' STEEM','');
+				historial += 'BUY ' + open_pays + ' STEEM @ ' + Math.round(current_pays*10000000/open_pays)/10000000 + ' (STEEM/SBD)<br>';				
+			}
+			else{
+				current_pays = operation[1]['current_pays'].replace(' SBD','');
+				open_pays = operation[1]['open_pays'].replace(' STEEM','');
+				historial += 'SELL ' + open_pays + ' STEEM @ ' + Math.round(current_pays*10000000/open_pays)/10000000 + ' (STEEM/SBD)<br>';		
+			}
+		counter++;
+		}
+	}
+	if(historial.length > 0){
+		$('#last').html(historial);
+	}
+	else{
+		$('#last').html('START TRADING BRO !');
+	}
+	
+});
 	
 	steem.api.getAccounts([nickname], function(err, response){
-		console.log(response);
 		var balance = response[0]['balance'] + ' + ' + response[0]['sbd_balance'];
 		$('#balance').html(balance);
 	});

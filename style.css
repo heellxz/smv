@@ -8,14 +8,21 @@ body {
 input {
 	border: 0px;
 	font-family: 'Montserrat', serif;
-	background-color: #FAFAFA;
+	background-color: #F11D6C;
 	font-weight: bold;
-	color: #18595D;
+	color: #FCFCFC;
+	text-align: center;
+	padding: 0;
 }
 
 p {
     margin: 0;
     padding: 0;
+}
+
+#last {
+	font-size: 10px;
+	font-weight: bolder;
 }
 
 #info {
