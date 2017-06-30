@@ -32,7 +32,7 @@ var grafo = Morris.Line({
 	xlabels: "second",
 	ykeys: ['a', 'b'],
 	labels: ['ask', 'bid'],
-	lineColors: ['#FF1111', '#11FF11'],
+	lineColors: ['#F11D6C', '#9CEF29'],
 	smooth: false,
 	ymax: 'auto',
 	ymin: 'auto',
