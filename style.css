@@ -1,0 +1,29 @@
+body {
+	font-family: 'Montserrat', serif;
+	font-size: 15px;
+    color: #3C344F;
+    background: #fefefe;
+}
+input {
+	border: 0px;
+	font-family: 'Montserrat', serif;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+#info {
+	text-align: center;
+}
+
+#grafo {
+	height: 250px;
+	width: 70%;
+	text-align: center;
+	position: absolute;
+	font-weight: bolder;
+	left: 15%;
+	right: 15%;
+}
