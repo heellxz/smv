@@ -2,8 +2,9 @@ body {
 	font-family: 'Montserrat', serif;
 	font-size: 15px;
     color: #18595D;
-    background: #FAFAFA;
+    background: #FCFCFC;
 }
+
 input {
 	border: 0px;
 	font-family: 'Montserrat', serif;
@@ -25,7 +26,6 @@ p {
 	height: 250px;
 	width: 70%;
 	text-align: center;
-	position: absolute;
 	font-weight: bolder;
 	left: 15%;
 	right: 15%;

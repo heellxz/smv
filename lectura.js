@@ -15,7 +15,7 @@ function refresh () {
 		var bids = response['bids'][0]['real_price'];
 		var milli = (new Date).getTime();
 
-		data.push({'a' : Math.round(ask*100000)/100000, 'b' : Math.round(bids*100000)/100000, "y" : milli});
+		data.push({'a' : ask, 'b' : bids, "y" : milli});
 
 		if(data.length > 100){
 			data.shift();
@@ -31,14 +31,15 @@ var grafo = Morris.Line({
 	hideHover: false,
 	xlabels: "second",
 	ykeys: ['a', 'b'],
-	labels: ['ask', 'bid'],
-	lineColors: ['#F11D6C', '#9CEF29'],
-	smooth: false,
+	labels: ['Lowest ask', 'Highest bid'],
+	lineColors: ['#F11D6C', '#00C176'],
 	ymax: 'auto',
 	ymin: 'auto',
 	axes: false,
 	grid: false,
-	pointSize: 10
+	pointSize: 6,
+	lineWidth: 2
+
 
 });
 
